@@ -14,7 +14,7 @@ namespace GradeBook.GradeBooks
 
         public override char GetLetterGrade(double averageGrade)
         {
-            int countTop = 0;
+            double countTop = 0;
 
             if (Students.Count < 5) throw new InvalidOperationException("Number of students less than 5.");
 
@@ -22,7 +22,7 @@ namespace GradeBook.GradeBooks
             {
                 if (x.AverageGrade >= averageGrade) countTop++;
             }
-            int percyl = countTop / Students.Count * 100;
+            double percyl = countTop / Students.Count * 100;
 
             if (percyl > 80) return 'F';
             else if (percyl > 60) return 'D';
